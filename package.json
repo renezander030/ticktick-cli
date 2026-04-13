@@ -1,5 +1,5 @@
 {
-  "name": "ticktick-cli",
+  "name": "@renezander030/ticktick-cli",
   "version": "1.0.0",
   "description": "CLI and MCP server for TickTick task management",
   "type": "module",
@@ -26,6 +26,9 @@
   ],
   "author": "",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=18.0.0"
   },
