@@ -1,6 +1,6 @@
 {
   "name": "@reneza/ticktick-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI and MCP server for TickTick task management",
   "type": "module",
   "bin": {
@@ -20,10 +20,22 @@
   },
   "keywords": [
     "ticktick",
-    "todo",
-    "tasks",
-    "cli",
-    "mcp"
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "claude-code",
+    "claude-desktop",
+    "claude-plugin",
+    "claude-code-plugin",
+    "claude-mcp",
+    "ai-assistant",
+    "semantic-search",
+    "vector-search",
+    "qdrant",
+    "ollama",
+    "task-management",
+    "ticktick-api",
+    "ticktick-mcp"
   ],
   "author": "",
   "license": "MIT",
