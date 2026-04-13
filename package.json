@@ -1,11 +1,11 @@
 {
-  "name": "@renezander030/ticktick-cli",
-  "version": "1.0.0",
+  "name": "@reneza/ticktick-cli",
+  "version": "1.0.1",
   "description": "CLI and MCP server for TickTick task management",
   "type": "module",
   "bin": {
-    "ticktick": "./bin/ticktick.js",
-    "ticktick-mcp": "./bin/ticktick-mcp.js"
+    "ticktick": "bin/ticktick.js",
+    "ticktick-mcp": "bin/ticktick-mcp.js"
   },
   "exports": {
     ".": "./lib/core.js",

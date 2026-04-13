@@ -13,7 +13,7 @@ CLI and MCP server for TickTick task management.
 
 ```bash
 # Install globally
-npm install -g @renezander030/ticktick-cli
+npm install -g @reneza/ticktick-cli
 
 # Run interactive setup (creates API credentials and authenticates)
 ticktick setup
@@ -45,13 +45,13 @@ The setup wizard will guide you through:
 ## Installation
 
 ```bash
-npm install -g @renezander030/ticktick-cli
+npm install -g @reneza/ticktick-cli
 ```
 
 Or use directly with npx:
 
 ```bash
-npx @renezander030/ticktick-cli setup
+npx @reneza/ticktick-cli setup
 ```
 
 ## Setup
