@@ -1,6 +1,6 @@
 {
   "name": "@reneza/ticktick-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI and MCP server for TickTick task management",
   "type": "module",
   "bin": {
