@@ -1,0 +1,26 @@
+{
+  "name": "ticktick-cli",
+  "owner": {
+    "name": "René Zander"
+  },
+  "metadata": {
+    "description": "TickTick task management for Claude Code — manage tasks, projects, and priorities via MCP",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ticktick",
+      "source": "./",
+      "description": "Manage TickTick tasks, projects, and priorities directly from Claude Code",
+      "version": "1.0.0",
+      "author": {
+        "name": "René Zander"
+      },
+      "homepage": "https://github.com/renezander030/ticktick-cli",
+      "repository": "https://github.com/renezander030/ticktick-cli",
+      "license": "MIT",
+      "keywords": ["ticktick", "tasks", "todo", "productivity", "mcp"],
+      "category": "productivity"
+    }
+  ]
+}

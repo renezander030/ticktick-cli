@@ -4,6 +4,10 @@
 
 CLI and MCP server for TickTick task management.
 
+**Fork of [kvanland/ticktick-cli](https://github.com/kvanland/ticktick-cli)** with additional features:
+- Completed tasks listing with date range filtering and folder support
+- Claude Code plugin marketplace support
+
 ## Quickstart
 
 ```bash
@@ -151,7 +155,13 @@ ticktick tasks search --priority high
 
 # Filter by due date
 ticktick tasks due 3           # Tasks due in 3 days
+ticktick tasks due 7 --folder FOLDER_ID  # Filter by folder
 ticktick tasks priority        # High priority tasks
+
+# Completed tasks
+ticktick tasks completed                              # Last 7 days
+ticktick tasks completed --start 2026-01-01 --end 2026-01-31  # Date range
+ticktick tasks completed --folder FOLDER_ID           # Filter by folder
 ```
 
 ### Projects
@@ -258,6 +268,7 @@ Once configured, the AI assistant can use these tools:
 | `ticktick_tasks_search` | Search by keyword, tags, or priority |
 | `ticktick_tasks_due` | Get tasks due within N days |
 | `ticktick_tasks_priority` | Get high priority tasks |
+| `ticktick_tasks_completed` | List completed tasks within a date range |
 
 **Example prompts for Claude:**
 - "What tasks do I have due this week?"
@@ -294,6 +305,20 @@ ln -s /path/to/ticktick-cli/SKILL.md .claude/skills/ticktick.md
 ```
 
 The skill provides Claude Code with documentation on how to use the CLI commands.
+
+## Claude Code Plugin Marketplace
+
+This repository is a Claude Code plugin marketplace. Install the TickTick plugin directly:
+
+```bash
+# Add the marketplace
+/plugin marketplace add ticktick-cli https://github.com/renezander030/ticktick-cli
+
+# Install the plugin
+/plugin install ticktick@ticktick-cli
+```
+
+The plugin registers the MCP server automatically — no manual config needed.
 
 ## Programmatic Usage
 
@@ -356,4 +381,4 @@ Tokens auto-refresh, but if you see issues, run `ticktick auth refresh` or `tick
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE). Originally created by [kvanland](https://github.com/kvanland/ticktick-cli).

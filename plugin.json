@@ -1,0 +1,33 @@
+{
+  "name": "ticktick",
+  "description": "Manage TickTick tasks, projects, and priorities directly from Claude Code",
+  "version": "1.0.0",
+  "author": {
+    "name": "René Zander"
+  },
+  "homepage": "https://github.com/renezander030/ticktick-cli",
+  "repository": "https://github.com/renezander030/ticktick-cli",
+  "license": "MIT",
+  "keywords": ["ticktick", "tasks", "todo", "productivity", "mcp"],
+  "category": "productivity",
+  "mcpServers": {
+    "ticktick": {
+      "command": "node",
+      "args": ["${PLUGIN_DIR}/bin/ticktick-mcp.js"],
+      "env": {
+        "TICKTICK_CLIENT_ID": {
+          "description": "TickTick OAuth Client ID from developer.ticktick.com",
+          "required": false
+        },
+        "TICKTICK_CLIENT_SECRET": {
+          "description": "TickTick OAuth Client Secret from developer.ticktick.com",
+          "required": false
+        }
+      }
+    }
+  },
+  "setup": {
+    "instructions": "Run `ticktick setup` to configure OAuth credentials. Get your Client ID and Secret from https://developer.ticktick.com/",
+    "postInstall": "npm install"
+  }
+}
