@@ -253,6 +253,9 @@ describe('tasks.create', () => {
 describe('tasks.update', () => {
   test('updates task with provided options', async () => {
     const mockApiRequest = mock.fn(async (method, path, body) => {
+      if (method === 'GET' && path.includes('/task/')) {
+        return { id: 'task123456789', projectId: 'proj123456789', title: 'Original' };
+      }
       if (method === 'POST' && path.includes('/task/')) {
         return {
           id: body.id,
@@ -286,10 +289,13 @@ describe('tasks.update', () => {
     assert.equal(postCall.arguments[2].priority, 3); // medium = 3
   });
 
-  test('only includes provided fields in update', async () => {
+  test('preserves existing title when not provided in update', async () => {
     const mockApiRequest = mock.fn(async (method, path, body) => {
+      if (method === 'GET' && path.includes('/task/')) {
+        return { id: 'task123456789', projectId: 'proj123', title: 'Existing Title' };
+      }
       if (method === 'POST' && path.includes('/task/')) {
-        return { id: body.id, projectId: 'proj123', title: 'Task', priority: 0, tags: [] };
+        return { id: body.id, projectId: 'proj123', title: body.title, priority: 0, tags: [] };
       }
       if (path === '/project') {
         return [{ id: 'proj123456789' }];
@@ -307,7 +313,7 @@ describe('tasks.update', () => {
     );
     const body = postCall.arguments[2];
     assert.equal(body.dueDate, '2026-03-01');
-    assert.equal(body.title, undefined);
+    assert.equal(body.title, 'Existing Title');
     assert.equal(body.priority, undefined);
   });
 });
