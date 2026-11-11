@@ -506,7 +506,7 @@ describe('tasks.due', () => {
       return {};
     });
 
-    const result = await tasks.due(7, makeDeps(mockApiRequest));
+    const result = await tasks.due(7, {}, makeDeps(mockApiRequest));
 
     assert.equal(result.days, 7);
     // Should include tomorrow and next week, but not next month, no due date, or completed
@@ -534,7 +534,7 @@ describe('tasks.due', () => {
       return {};
     });
 
-    const result = await tasks.due(7, makeDeps(mockApiRequest));
+    const result = await tasks.due(7, {}, makeDeps(mockApiRequest));
 
     assert.equal(result.tasks[0].title, 'Day 1');
     assert.equal(result.tasks[1].title, 'Day 2');
@@ -549,7 +549,7 @@ describe('tasks.due', () => {
       return {};
     });
 
-    const result = await tasks.due(undefined, makeDeps(mockApiRequest));
+    const result = await tasks.due(undefined, {}, makeDeps(mockApiRequest));
 
     assert.equal(result.days, 7);
   });
@@ -573,7 +573,7 @@ describe('tasks.due', () => {
       return {};
     });
 
-    const result = await tasks.due(7, makeDeps(mockApiRequest));
+    const result = await tasks.due(7, {}, makeDeps(mockApiRequest));
 
     // Overdue tasks should be included - they're the most urgent
     assert.equal(result.count, 2);

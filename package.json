@@ -39,6 +39,10 @@
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renezander030/ticktick-cli.git"
+  },
   "publishConfig": {
     "access": "public"
   },
